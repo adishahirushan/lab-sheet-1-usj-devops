@@ -7,9 +7,9 @@ public class main {
 
     public static void main(String[] args) {
         System.out.println("Student Record Manager");
-        addStudent("Alice"); 
-        addStudent("Bob"); 
-        
+        addStudent("Alice");
+        addStudent("Bob");
+        viewStudents(); 
 
 
     }
@@ -18,5 +18,12 @@ public class main {
         students.add(name);
         System.out.println(name + " added.");
     }
-    
+
+    static void viewStudents() {
+        System.out.println("Student List:");
+        for (String s : students) {
+            System.out.println(s);
+        }
+    }
+
 }
