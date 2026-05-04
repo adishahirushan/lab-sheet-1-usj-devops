@@ -9,8 +9,8 @@ public class main {
         System.out.println("Student Record Manager");
         addStudent("Alice");
         addStudent("Bob");
-        viewStudents(); 
-
+        viewStudents();
+        deleteStudent("Alice"); 
 
     }
 
@@ -24,6 +24,11 @@ public class main {
         for (String s : students) {
             System.out.println(s);
         }
+    }
+
+    static void deleteStudent(String name) {
+        students.remove(name);
+        System.out.println(name + " removed.");
     }
 
 }
