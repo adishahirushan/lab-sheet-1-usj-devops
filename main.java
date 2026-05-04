@@ -11,7 +11,10 @@ public class main {
         addStudent("Bob");
         viewStudents();
         deleteStudent("Alice");
-        countStudents(); 
+        countStudents();
+        searchStudent("Alice");
+        updateStudent("Bob", "Charlie");
+        viewStudents();
 
     }
 
@@ -34,6 +37,31 @@ public class main {
 
     static void countStudents() {
         System.out.println("Total students: " + students.size());
+    }
+
+    static void searchStudent(String name) {
+        boolean found = false;
+        for (String s : students) {
+            if (s.equalsIgnoreCase(name)) {
+                System.out.println(name + " found.");
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println(name + " not found.");
+        }
+    }
+
+    static void updateStudent(String oldName, String newName) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).equalsIgnoreCase(oldName)) {
+                students.set(i, newName);
+                System.out.println(oldName + " updated to " + newName);
+                return;
+            }
+        }
+        System.out.println(oldName + " not found.");
     }
 
 }
